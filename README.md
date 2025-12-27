@@ -1,5 +1,9 @@
-![General Stats](https://github.com/dineshingale/dineshingale/blob/main/github-metrics-header.svg)
+<div align="center">
 
-![Streak](https://github.com/dineshingale/dineshingale/blob/main/github-metrics-streak.svg)
+<img src="https://github.com/dineshingale/dineshingale/blob/main/github-metrics-header.svg" height="160" alt="Stats" />
 
-![Languages](https://github.com/dineshingale/dineshingale/blob/main/github-metrics-langs.svg)
+<img src="https://github.com/dineshingale/dineshingale/blob/main/github-metrics-streak.svg" height="160" alt="Streak" />
+
+<img src="https://github.com/dineshingale/dineshingale/blob/main/github-metrics-langs.svg" height="160" alt="Langs" />
+
+</div>
