@@ -9,19 +9,19 @@ jobs:
     permissions:
       contents: write
     steps:
-      # --- Card 1: General Stats (Save immediately) ---
+      # --- Card 1: General Stats (Switched to Standard View for reliability) ---
       - name: General Stats
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           filename: github-metrics-header.svg
-          base: header
-          config_header_view: box
+          # "repositories" adds your Star count and PR count
+          base: header, repositories
           output_action: commit
-          committer_message: "Update header stats"
+          committer_message: "Update header"
           theme: tokyonight
 
-      # --- Card 2: Streak (Save immediately) ---
+      # --- Card 2: Streak (Switched to Daily Mode - More reliable) ---
       - name: Streak
         uses: lowlighter/metrics@latest
         with:
@@ -29,12 +29,11 @@ jobs:
           filename: github-metrics-streak.svg
           base: ""
           plugin_streak: yes
-          plugin_streak_mode: weekly
           output_action: commit
-          committer_message: "Update streak stats"
+          committer_message: "Update streak"
           theme: tokyonight
 
-      # --- Card 3: Languages (Save immediately) ---
+      # --- Card 3: Languages (This one is already working perfect) ---
       - name: Languages
         uses: lowlighter/metrics@latest
         with:
@@ -46,5 +45,5 @@ jobs:
           plugin_languages_limit: 8
           plugin_languages_details: lines, percentage
           output_action: commit
-          committer_message: "Update language stats"
+          committer_message: "Update languages"
           theme: tokyonight
