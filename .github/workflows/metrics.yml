@@ -1,10 +1,8 @@
 name: Metrics
 on:
-  # Schedule daily updates (00:00 IST roughly)
+  # Schedule daily updates (00:00 IST)
   schedule: [{cron: "30 18 * * *"}]
-  # (optional) Run workflow manually
   workflow_dispatch:
-  # (optional) Run workflow when pushing to master/main
   push: {branches: ["master", "main"]}
 jobs:
   github-metrics:
@@ -16,21 +14,29 @@ jobs:
         with:
           token: ${{ secrets.METRICS_TOKEN }}
 
-          # Options
+          # --- General Settings ---
           user: dineshingale
           template: classic
           base: header, activity, community, repositories, metadata
           config_timezone: Asia/Kolkata
-          
-          # Output file name
           filename: github-metrics.svg
-          
-          # Theme (Your preference)
           theme: tokyonight
           
-          # Plugins
+          # --- 1. The "Activity Graph" (Wave style) ---
           plugin_lines: yes
+          plugin_lines_history_limit: 1
+          plugin_lines_repositories_limit: 4
+          
+          # --- 2. The "Streak" Stats ---
+          plugin_streak: yes
+          
+          # --- 3. The "Trophies" (Achievements) ---
+          plugin_achievements: yes
+          plugin_achievements_display: compact
+          plugin_achievements_threshold: C
+          
+          # --- 4. The "Top Languages" ---
           plugin_languages: yes
           plugin_languages_ignored: html, css
-          plugin_streak: yes
-          plugin_streak_mode: weekly
+          plugin_languages_details: lines, percentage
+          plugin_languages_limit: 8
