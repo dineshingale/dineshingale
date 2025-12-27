@@ -1,6 +1,5 @@
 name: Metrics
 on:
-  # Schedule daily updates (00:00 IST)
   schedule: [{cron: "30 18 * * *"}]
   workflow_dispatch:
   push: {branches: ["master", "main"]}
@@ -22,21 +21,19 @@ jobs:
           filename: github-metrics.svg
           theme: tokyonight
           
-          # --- 1. The "Activity Graph" (Wave style) ---
+          # --- 1. Streak Stats (Now Prioritized) ---
+          plugin_streak: yes
+          plugin_streak_mode: weekly
+          
+          # --- 2. Activity Graph (The wavy lines) ---
           plugin_lines: yes
           plugin_lines_history_limit: 1
           plugin_lines_repositories_limit: 4
           
-          # --- 2. The "Streak" Stats ---
-          plugin_streak: yes
-          
-          # --- 3. The "Trophies" (Achievements) ---
-          plugin_achievements: yes
-          plugin_achievements_display: compact
-          plugin_achievements_threshold: C
-          
-          # --- 4. The "Top Languages" ---
+          # --- 3. Languages ---
           plugin_languages: yes
           plugin_languages_ignored: html, css
-          plugin_languages_details: lines, percentage
           plugin_languages_limit: 8
+          
+          # --- DISABLED CAUSING ERROR: Achievements ---
+          # We removed plugin_achievements to fix the "Unexpected Error"
