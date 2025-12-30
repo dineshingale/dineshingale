@@ -1,7 +1,7 @@
 name: GitHub-Profile-Summary-Cards
 on:
   schedule: # Run automatically every 24 hours
-    - cron: "0 18 * * *"
+    - cron: "13 */6 * * *"
   workflow_dispatch: # Allow manual run
   push: {branches: ["master", "main"]}
 
