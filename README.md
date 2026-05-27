@@ -1,6 +1,6 @@
 ![GitHub Stats](https://github-readme-stats-fast.vercel.app/api?username=dineshingale&show_icons=true&theme=tokyonight)
 ![GitHub Stats](https://github-readme-stats-fast.vercel.app/api/streak?username=dineshingale&theme=tokyonight)
-![GitHub Stats](https://github-readme-stats-fast.vercel.app/api/top-langs/?username=dineshingale&layout=compact&theme=tokyonight)
+![GitHub Stats](https://github-readme-stats-fast.vercel.app/api/top-langs/?username=dineshingale&layout=compact&theme=tokyonight&hide=javascript,typescript)
 
 
 <!-- <div align="center">
